@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>micromediagram demo</title>
+  <link rel="stylesheet" href="css/micromediagram.css">
+</head>
+<body>
+
+  <nav>
+    <a href="#">micromediagram</a>
+    <a href="#">here</a>
+    <a href="#">there</a>
+    <a href="#">and everywhere</a>
+  </nav>
+  <header>
+    <h1>micromediagram demo</h1>
+  </header>
+  <article>
+    <section id="inputSection">
+      <form action="" method="post" id="uploadform">
+        <div>
+          <label for="photoTitle">Title:</label><br>
+          <input type="text" id="photoTitle" name="photoTitle">
+        </div>
+        <div>
+          <label for="fileInput">Image:</label><br>
+          <input type="file" name="fileInput" id="fileInput">
+        </div>
+        <div>
+          <label for="photoCaption">Caption:</label><br>
+          <input type="text" id="photoCaption" name="photoCaption">
+        </div>
+        <button type="submit">serialize upload</button>
+      </form>
+    </section>
+    <section id="previewSection"></section>
+  </article>
+
+  <script src="js/upload.js"></script>
+</body>
+</html>

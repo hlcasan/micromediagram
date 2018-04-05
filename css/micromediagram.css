@@ -1,0 +1,28 @@
+/* micromediagram.css */
+
+#previewSection{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+figure img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* for drop.html */
+#dropZone{
+  width: 100%;
+  height: 4em;
+  border-style: dashed;
+  border-color: rgba(0,0,0,0.1);
+}
+
+progress{
+  width: 100%;
+}
+
+/* for firebase.html */
+#gallerySection{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
