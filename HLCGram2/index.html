@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MicroMediaGram</title>
+    <style>
+        img {
+            max-width: 10em;
+        }
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #gallery div {
+            border: solid red 1px;
+            margin: 0.5em;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 
+LOCAL STORAGE:
+username window.localStorage.getItem("username")
+userid window.localStorage.getItem("userid")
+-->
+
+<div id="wrapper">
+    <header>
+        <h1>MicroMediaGram v2.0</h1>
+        <p>You must customize this page and the others for your needs.</p>
+        <button id="logout">Log out</button>
+    </header>
+
+    <!-- WELCOME -->
+    <section id="welcomeContainer">
+        <h2 class="welcome">Welcome
+            <script>
+                document.write(window.localStorage.getItem("username"));
+            </script>!</h2>
+
+        <a href="postImage.html">Post image</a>
+    </section>
+
+
+    <!-- LOG IN-->
+    <section id="loginContainer">
+        <h2>Log in</h2>
+
+        <form id="loginF" action="" method="post">
+            <label>Username
+                <input type="text" name="username">
+            </label>
+            <label>Password
+                <input type="password" name="password">
+            </label>
+            <input type="submit">
+        </form>
+        <script src="js/login.js"></script>
+    </section>
+
+    <!-- SIGN IN -->
+    <section id="signinContainer">
+        <h2>Sign in</h2>
+
+        <form id="signinF" action="" method="post">
+            <label>Username
+                <input type="text" name="username">
+            </label>
+            <label>Password
+                <input type="password" name="password">
+            </label>
+            <input type="submit">
+        </form>
+        <script src="js/signin.js"></script>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery"></section>
+    <script src="js/gallery.js"></script>
+    <script>gallery();</script>
+
+<!-- UI HANDLER -->
+<script src="js/ui.js"></script>
+
+</div><!--wrapper-->
+</body>
+
+</html>

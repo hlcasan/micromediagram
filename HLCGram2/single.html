@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MicroMediaGram</title>
+    <style>
+        img {
+            max-width: 100%;
+        }
+        #showcase {
+            width: 60%;
+            margin: auto;
+            border-radius: 1em;
+            overflow: hidden;
+            background: #eee;
+        }
+        #showcase p {
+            padding-left: 1em;
+        }
+        .commentBox {
+            border-top: solid 1px white;
+        }
+        .commentUser {
+            color: green;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 1em;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 
+LOCAL STORAGE:
+username window.localStorage.getItem("username")
+userid window.localStorage.getItem("userid")
+QUERY STRING:
+i qStr.i
+-->
+
+<script>
+    //Get the query string
+    var qStr = {};
+    location.search.substr(1).split("&").forEach(function (item) {
+        qStr[item.split("=")[0]] = item.split("=")[1];
+    });
+</script>
+
+<div id="wrapper">
+    <header>
+        <h1>MicroMediaGram v2.0</h1>
+        <p>You must customize this page and the others for your needs.</p>
+        <button id="logout">Log out</button>
+    </header>
+
+    <!-- WELCOME -->
+    <section id="welcomeContainer">
+        <h2 class="welcome">Welcome
+            <script>
+                document.write(window.localStorage.getItem("username"));
+            </script>!</h2>
+
+        <a href="postImage.html">Post image</a>
+    </section>
+
+
+    <!-- LOG IN-->
+    <section id="loginContainer">
+        <h2>Log in</h2>
+
+        <form id="loginF" action="" method="post">
+            <label>Username
+                <input type="text" name="username">
+            </label>
+            <label>Password
+                <input type="password" name="password">
+            </label>
+            <input type="submit">
+        </form>
+        <script src="js/login.js"></script>
+    </section>
+
+    <!-- SIGN IN -->
+    <section id="signinContainer">
+        <h2>Sign in</h2>
+
+        <form id="signinF" action="" method="post">
+            <label>Username
+                <input type="text" name="username">
+            </label>
+            <label>Password
+                <input type="password" name="password">
+            </label>
+            <input type="submit">
+        </form>
+        <script src="js/signin.js"></script>
+    </section>
+
+    <!-- SINGLE SHOWCASE -->
+    <section id="showcase">
+        <div id="imgBox"></div>
+            <script src="js/singleImg.js"></script>
+            <script>singleImg();</script>
+        <div id="commentsBox"></div>
+            <script src="js/singleCom.js"></script>
+            <script>singleCom();</script>
+    </section> 
+
+    <!-- COMMENT FORM-->
+    <section id="commentFContainer">
+        <form id="commentF" action="" method="post">
+            <textarea name="content"></textarea>
+            <input type="submit">
+        </form>
+        <script src="js/addComment.js"></script>
+    </section>
+
+<!-- UI HANDLER -->
+<script src="js/ui.js"></script>
+
+</div><!--wrapper-->
+</body>
+
+</html>
